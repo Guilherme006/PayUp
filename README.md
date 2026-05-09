@@ -1,27 +1,27 @@
 # PayUp
 
-PayUp e um aplicativo iOS para organizar cobrancas de clientes. O app permite cadastrar clientes, registrar valor e data de cobranca, listar lancamentos por dia, calcular recebimentos do dia e agendar lembretes locais para cobrancas recorrentes.
+PayUp é um aplicativo iOS para organizar cobranças de clientes. O app permite cadastrar clientes, registrar valor e data de cobrança, listar lançamentos por dia, calcular recebimentos do dia e agendar lembretes locais para cobranças recorrentes.
 
-O projeto foi desenvolvido com UIKit, Swift e interface programatica, sem Storyboards para as telas principais.
+O projeto foi desenvolvido com UIKit, Swift e interface programática, sem Storyboards para as telas principais.
 
-## Visao Geral
+## Visão Geral
 
 Principais funcionalidades:
 
-- Cadastro de clientes com nome, contato, telefone, CNPJ, endereco, valor e data de cobranca.
-- Edicao e exclusao de clientes cadastrados.
+- Cadastro de clientes com nome, contato, telefone, CNPJ, endereço, valor e data de cobrança.
+- Edição e exclusão de clientes cadastrados.
 - Listagem horizontal de clientes na Home.
-- Visualizacao de lancamentos por dia da semana.
-- Calculo do total de recebimentos do dia atual.
-- Filtro de lancamentos por nome do cliente.
-- Agendamento de notificacoes locais para cobrancas recorrentes.
-- Identidade visual propria com cores, fontes K2D e assets customizados.
+- Visualização de lançamentos por dia da semana.
+- Cálculo do total de recebimentos do dia atual.
+- Filtro de lançamentos por nome do cliente.
+- Agendamento de notificações locais para cobranças recorrentes.
+- Identidade visual própria com cores, fontes K2D e assets customizados.
 
 ## Tecnologias
 
 - Swift 5
 - UIKit
-- Auto Layout programatico
+- Auto Layout programático
 - SQLite3
 - UserNotifications
 - Xcode 16.3
@@ -55,26 +55,26 @@ PayUp/
 
 ## Arquitetura
 
-O projeto segue uma organizacao proxima de MVVM usando UIKit:
+O projeto segue uma organização próxima de MVVM usando UIKit:
 
-- `ViewController`: coordena ciclo de vida da tela, eventos do usuario, apresentacao de telas e conexao entre view e view model.
+- `ViewController`: coordena ciclo de vida da tela, eventos do usuário, apresentação de telas e conexão entre view e view model.
 - `View`: monta a interface visual usando UIKit e Auto Layout.
-- `ViewModel`: concentra regras de apresentacao, formatacao e acesso aos dados.
+- `ViewModel`: concentra regras de apresentação, formatação e acesso aos dados.
 - `Model`: representa as entidades e estruturas usadas pelo app.
-- `DatabaseManager`: centraliza persistencia local em SQLite.
-- `NotificationManager`: centraliza o agendamento e cancelamento de notificacoes locais.
+- `DatabaseManager`: centraliza persistência local em SQLite.
+- `NotificationManager`: centraliza o agendamento e cancelamento de notificações locais.
 
-## Ciclo de Inicializacao
+## Ciclo de Inicialização
 
 O ponto de entrada do app fica em `AppDelegate.swift`, marcado com `@main`.
 
-Durante a inicializacao, o app solicita permissao para notificacoes locais:
+Durante a inicialização, o app solicita permissão para notificações locais:
 
 ```swift
 UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound])
 ```
 
-A janela principal e configurada em `SceneDelegate.swift`. O app cria uma `UIWindow`, instancia uma `UINavigationController` e define a `HomeViewController` como tela inicial.
+A janela principal é configurada em `SceneDelegate.swift`. O app cria uma `UIWindow`, instancia uma `UINavigationController` e define a `HomeViewController` como tela inicial.
 
 ## Features
 
@@ -86,25 +86,25 @@ Arquivos principais:
 - `Sources/Features/Home/View/HomeViewController.swift`
 - `Sources/Features/Home/ViewModel/HomeViewModel.swift`
 
-A Home e a tela principal do aplicativo. Ela exibe:
+A Home é a tela principal do aplicativo. Ela exibe:
 
-- Cabecalho com logo, botao de notificacao e imagem de perfil.
+- Cabeçalho com logo, botão de notificação e imagem de perfil.
 - Seletor horizontal de dias da semana.
 - Card com recebimentos de hoje.
-- Botao para adicionar cliente.
+- Botão para adicionar cliente.
 - Lista horizontal de clientes.
-- Secao de lancamentos.
-- Botao de filtro por nome.
+- Seção de lançamentos.
+- Botão de filtro por nome.
 
 Responsabilidades principais:
 
 - Buscar clientes no banco local.
-- Transformar clientes em modelos de exibicao.
+- Transformar clientes em modelos de exibição.
 - Calcular o total de recebimentos do dia atual.
-- Filtrar lancamentos por nome.
+- Filtrar lançamentos por nome.
 - Atualizar a lista quando dados de cliente mudam.
 
-### Formulario de Cliente
+### Formulário de Cliente
 
 Arquivos principais:
 
@@ -113,25 +113,25 @@ Arquivos principais:
 - `Sources/Features/Form/View/ClientFormViewDelegate.swift`
 - `Sources/Features/Form/ViewModel/ClientFormViewModel.swift`
 
-O formulario funciona em dois modos:
+O formulário funciona em dois modos:
 
 - `.add`: adiciona um novo cliente.
 - `.edit(Client)`: edita ou exclui um cliente existente.
 
-Campos do formulario:
+Campos do formulário:
 
 - Valor
-- Data de cobranca
-- Cobranca recorrente
-- Frequencia da recorrencia
+- Data de cobrança
+- Cobrança recorrente
+- Frequência da recorrência
 - Dia selecionado
 - Nome do cliente
 - Contato
 - Telefone
 - CNPJ
-- Endereco
+- Endereço
 
-Ao salvar, os dados sao convertidos em um `Client` e enviados ao `ClientFormViewModel`, que usa o `DatabaseManager` para persistir. Caso o cliente tenha cobranca recorrente, o `NotificationManager` agenda os lembretes.
+Ao salvar, os dados são convertidos em um `Client` e enviados ao `ClientFormViewModel`, que usa o `DatabaseManager` para persistir. Caso o cliente tenha cobrança recorrente, o `NotificationManager` agenda os lembretes.
 
 ### Splash
 
@@ -141,33 +141,33 @@ Arquivos principais:
 - `Sources/Features/Splash/View/SplashViewController.swift`
 - `Sources/Features/Splash/ViewModel/SplashViewModel.swift`
 
-A feature de Splash contem uma animacao inicial com logo e triangulo. Atualmente, a tela inicial configurada no `SceneDelegate` e a `HomeViewController`, entao a Splash existe no projeto, mas nao esta conectada ao fluxo inicial.
+A feature de Splash contém uma animação inicial com logo e triângulo. Atualmente, a tela inicial configurada no `SceneDelegate` é a `HomeViewController`; então, a Splash existe no projeto, mas não está conectada ao fluxo inicial.
 
 ## Core
 
 ### Components
 
-Componentes reutilizaveis do app:
+Componentes reutilizáveis do app:
 
-- `AuthenticationView`: tela/componente visual de autenticacao.
-- `CompanyCell`: celula da lista horizontal de empresas/clientes.
+- `AuthenticationView`: tela/componente visual de autenticação.
+- `CompanyCell`: célula da lista horizontal de empresas/clientes.
 - `CompanyListView`: collection view horizontal para clientes.
-- `CurrencyTextField`: campo customizado para valor monetario.
+- `CurrencyTextField`: campo customizado para valor monetário.
 - `DatePickerTextField`: campo customizado com seletor de data.
 - `DaySelectorView`: seletor horizontal de dias da semana.
-- `InputTextFieldView`: campo de texto padronizado com mascaras por tipo.
-- `PaymentCardView`: card visual para valores e lancamentos.
+- `InputTextFieldView`: campo de texto padronizado com máscaras por tipo.
+- `PaymentCardView`: card visual para valores e lançamentos.
 
 ### Models
 
 Modelos principais:
 
-- `Client`: representa um cliente/cobranca persistida.
-- `ClientFormMode`: define modo de abertura do formulario.
+- `Client`: representa um cliente/cobrança persistida.
+- `ClientFormMode`: define modo de abertura do formulário.
 - `CompanyItemModel`: modelo visual para item da lista de clientes.
-- `InputTextFieldType`: define o tipo de campo e mascaras.
+- `InputTextFieldType`: define o tipo de campo e máscaras.
 - `PaymentCardModel`: modelo visual para cards de pagamento.
-- `PaymentCardType`: define tipo, icone e subtitulo do card.
+- `PaymentCardType`: define tipo, ícone e subtítulo do card.
 
 ### Database
 
@@ -209,7 +209,7 @@ Campos:
 - `frequency`
 - `selected_day`
 
-Operacoes disponiveis:
+Operações disponíveis:
 
 - Inserir cliente.
 - Atualizar cliente.
@@ -223,15 +223,15 @@ Arquivo principal:
 
 - `Sources/Core/Database/NotificationManager.swift`
 
-O `NotificationManager` agenda notificacoes locais para clientes recorrentes usando `UNUserNotificationCenter`.
+O `NotificationManager` agenda notificações locais para clientes recorrentes usando `UNUserNotificationCenter`.
 
-Frequencias tratadas:
+Frequências tratadas:
 
 - `Diariamente`
 - `Semanalmente`
 - `Mensalmente`
 
-Observacao: o formulario tambem apresenta a opcao `Anualmente`, mas a logica atual de notificacao ainda nao possui tratamento para essa frequencia.
+Observação: o formulário também apresenta a opção `Anualmente`, mas a lógica atual de notificação ainda não possui tratamento para essa frequência.
 
 ### Colors
 
@@ -247,17 +247,17 @@ Arquivo:
 
 - `Sources/Core/Typography/Fonts.swift`
 
-Centraliza os estilos tipograficos com a fonte K2D:
+Centraliza os estilos tipográficos com a fonte K2D:
 
 - `K2D-Bold`
 - `K2D-Regular`
 - `K2D-SemiBold`
 
-As fontes sao registradas no `Info.plist` em `UIAppFonts`.
+As fontes são registradas no `Info.plist` em `UIAppFonts`.
 
 ### Extensions
 
-Extensoes utilitarias:
+Extensões utilitárias:
 
 - `UITextField+Ext.swift`: adiciona padding lateral ao `UITextField`.
 - `UIView+Ext.swift`: permite encontrar o view controller pai de uma view.
@@ -274,13 +274,13 @@ PayUp/Resources/Assets.xcassets
 
 Incluem:
 
-- App icon
+- Ícone do app
 - Cor de destaque
 - Logo principal
-- Icones de cobranca
+- Ícones de cobrança
 - Imagens de perfil
 - Assets da Splash
-- Assets de Face ID/autenticacao
+- Assets de Face ID/autenticação
 
 ### Fontes
 
@@ -299,7 +299,7 @@ Arquivos:
 
 ## Como Rodar
 
-1. Clone o repositorio:
+1. Clone o repositório:
 
 ```bash
 git clone https://github.com/Guilherme006/PayUp.git
@@ -313,35 +313,35 @@ open PayUp.xcodeproj
 
 3. Selecione o scheme `PayUp`.
 
-4. Escolha um simulador ou dispositivo fisico.
+4. Escolha um simulador ou dispositivo físico.
 
 5. Rode o app com `Cmd + R`.
 
-## Permissoes
+## Permissões
 
-O app solicita permissao para notificacoes locais no primeiro launch. Essa permissao e necessaria para os lembretes de cobrancas recorrentes.
+O app solicita permissão para notificações locais no primeiro launch. Essa permissão é necessária para os lembretes de cobranças recorrentes.
 
-## Persistencia de Dados
+## Persistência de Dados
 
-Os dados sao armazenados localmente no dispositivo. Nao ha backend remoto, sincronizacao em nuvem ou autenticacao externa implementada no fluxo atual.
+Os dados são armazenados localmente no dispositivo. Não há backend remoto, sincronização em nuvem ou autenticação externa implementada no fluxo atual.
 
-## Pontos de Atencao
+## Pontos de Atenção
 
-- A Splash existe, mas nao esta definida como tela inicial no fluxo atual.
-- A opcao `Anualmente` aparece no formulario, mas ainda nao e tratada no calculo de proximas notificacoes.
-- O filtro da Home atualmente filtra lancamentos por nome.
-- O banco SQLite nao possui migracoes versionadas.
-- O projeto ainda nao possui testes automatizados versionados.
-- Arquivos de produto compilado, como `PayUp.app`, nao devem ser versionados.
+- A Splash existe, mas não está definida como tela inicial no fluxo atual.
+- A opção `Anualmente` aparece no formulário, mas ainda não é tratada no cálculo de próximas notificações.
+- O filtro da Home atualmente filtra lançamentos por nome.
+- O banco SQLite não possui migrações versionadas.
+- O projeto ainda não possui testes automatizados versionados.
+- Arquivos de produto compilado, como `PayUp.app`, não devem ser versionados.
 
-## Convencoes do Projeto
+## Convenções do Projeto
 
-- Interfaces sao criadas por codigo usando UIKit.
+- Interfaces são criadas por código usando UIKit.
 - Views customizadas ficam em `Sources/Core/Components`.
 - Features ficam isoladas em `Sources/Features`.
 - Estilos globais ficam em `Colors` e `Typography`.
-- Persistencia e notificacoes ficam centralizadas em managers.
+- Persistência e notificações ficam centralizadas em managers.
 
 ## Status Atual
 
-O app contem a base funcional para cadastro, edicao, exclusao, listagem e notificacoes locais de cobrancas. A estrutura atual permite evoluir o produto adicionando autenticacao real, dashboard financeiro, historico de pagamentos, status de cobranca, migracoes de banco e testes automatizados.
+O app contém a base funcional para cadastro, edição, exclusão, listagem e notificações locais de cobranças. A estrutura atual permite evoluir o produto adicionando autenticação real, dashboard financeiro, histórico de pagamentos, status de cobrança, migrações de banco e testes automatizados.
