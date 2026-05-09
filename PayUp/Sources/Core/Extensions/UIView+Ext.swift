@@ -1,9 +1,3 @@
-//
-//  UIView+Ext.swift
-//  PayUp
-//
-//  Created by Arthur Rios on 23/04/25.
-//
 
 import Foundation
 import UIKit
