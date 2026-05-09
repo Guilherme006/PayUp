@@ -1,9 +1,3 @@
-//
-//  Client.swift
-//  PayUp
-//
-//  Created by Arthur Rios on 11/08/25.
-//
 
 import Foundation
 
