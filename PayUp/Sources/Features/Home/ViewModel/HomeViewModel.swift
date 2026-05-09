@@ -1,9 +1,3 @@
-//
-//  HomeViewModel.swift
-//  PayUp
-//
-//  Created by Arthur Rios on 03/09/25.
-//
 
 import Foundation
 
