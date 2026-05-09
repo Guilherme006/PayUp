@@ -1,9 +1,3 @@
-//
-//  CompanyCell.swift
-//  PayUp
-//
-//  Created by Arthur Rios on 12/05/25.
-//
 
 import Foundation
 import UIKit
