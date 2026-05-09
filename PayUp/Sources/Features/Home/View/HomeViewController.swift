@@ -1,9 +1,3 @@
-//
-//  HomeViewController.swift
-//  PayUp
-//
-//  Created by Arthur Rios on 01/05/25.
-//
 
 import Foundation
 import UIKit
