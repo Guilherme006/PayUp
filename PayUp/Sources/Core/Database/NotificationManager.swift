@@ -1,9 +1,3 @@
-//
-//  NotificationManager.swift
-//  PayUp
-//
-//  Created by Arthur Rios on 25/09/25.
-//
 
 import Foundation
 import UserNotifications
@@ -16,8 +10,6 @@ final class NotificationManager {
     func scheduleClientReminders(for client: Client) {
         print("Cliente \(client)")
         guard client.isRecurring else { return }
-        
-        //cancelClientReminder
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
         guard let firstDate = dateFormatter.date(from: client.dueDate) else {
