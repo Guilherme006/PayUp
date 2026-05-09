@@ -1,9 +1,3 @@
-//
-//  HomeView.swift
-//  PayUp
-//
-//  Created by Arthur Rios on 01/05/25.
-//
 
 import Foundation
 import UIKit
@@ -11,8 +5,6 @@ import UIKit
 final class HomeView: UIView {
     var onTapAddClient: (() -> Void)?
     var onTapFilter: (() -> Void)?
-    
-    // MARK: - Scroll + Container
     
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -36,8 +28,6 @@ final class HomeView: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
-    
-    // MARK: - Subviews
     
     let logoImage: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "mainLogo"))
@@ -158,10 +148,6 @@ final class HomeView: UIView {
         stackView.spacing = 12
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
-//        let card = PaymentCardView()
-//        card.translatesAutoresizingMaskIntoConstraints = false
-//        card.heightAnchor.constraint(equalToConstant: 95).isActive = true
-//        return card
     }()
     
     private let companyListView: CompanyListView = {
@@ -260,8 +246,6 @@ final class HomeView: UIView {
             mainStack.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor),
         ])
     }
-
-    // MARK: - Content
     
     func updateTransactions(_ transactions: [PaymentCardModel]) {
         transactionStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
@@ -296,8 +280,6 @@ final class HomeView: UIView {
     private func didTapFilter() {
         onTapFilter?()
     }
-    
-    // MARK: - Public Methods
     
     func updateCompanyList(companies: [CompanyItemModel]) {
         companyListView.updateCompanies(companies)
