@@ -1,9 +1,3 @@
-//
-//  PaymentCardModel.swift
-//  PayUp
-//
-//  Created by Arthur Rios on 16/06/25.
-//
 
 import Foundation
 
