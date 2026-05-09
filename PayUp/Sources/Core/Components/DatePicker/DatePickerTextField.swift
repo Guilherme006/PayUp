@@ -1,9 +1,3 @@
-//
-//  DatePickerTextField.swift
-//  PayUp
-//
-//  Created by Arthur Rios on 01/07/25.
-//
 
 import UIKit
 
