@@ -4,6 +4,8 @@ PayUp é um aplicativo iOS para organizar cobranças de clientes. O app permite 
 
 O projeto foi desenvolvido com UIKit, Swift e interface programática, sem Storyboards para as telas principais.
 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7b586846-0dd2-4c9c-9e74-3a04cf9a01ea" />
+
 ## Visão Geral
 
 Principais funcionalidades:
