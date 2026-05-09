@@ -1,9 +1,3 @@
-//
-//  Client.swift
-//  PayUp
-//
-//  Created by Arthur Rios on 30/06/25.
-//
 
 import UIKit
 
